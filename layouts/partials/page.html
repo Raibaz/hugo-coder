@@ -1,9 +1,15 @@
 <section class="container page">
   <article>
     <header>
+      {{ if .Params.featured_image }}
+      <img
+        src="{{ .Params.featured_image }}"
+        alt="Featured image"
+        class="featured_image"
+      />
+      {{ end }}
       <h1>{{ .Title }}</h1>
     </header>
-
     {{ .Content }}
   </article>
 </section>
