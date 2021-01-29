@@ -6,4 +6,12 @@
   a {
     color: $link-color;
   }
+
+  .webring {
+    padding-bottom: 1em;
+    webring-banner {
+      width: 50%;
+      margin: 0 auto;      
+    }
+  }
 }

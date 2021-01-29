@@ -1,5 +1,14 @@
 {{ if not .Site.Params.hideFooter | default false }}
   <footer class="footer">
+    <section class="webring">
+      <webring-banner>
+        <p>Member of <a href="https://retronerds.netlify.app/">Retronerds</a></p>
+        <a href="https://retronerds.netlify.app/prev">Previous</a>
+        <a href="https://retronerds.netlify.app/random">Random</a>
+        <a href="https://retronerds.netlify.app/next">Next</a>
+      </webring-banner>
+      <script async src="https://retronerds.netlify.app/embed.js" charset="utf-8"></script>
+    </section>
     <section class="container">
       {{ with .Site.Params.footercontent | safeHTML }}
         <p>{{ . }}</p>
