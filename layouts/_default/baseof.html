@@ -115,7 +115,7 @@
     </main>
 
     {{ if not .Site.Params.hideColorSchemeToggle }}
-      {{ if .Site.IsServer }}
+      {{ if hugo.IsServer }}
         {{ $script := resources.Get "js/dark-mode.js" }}
         <script src="{{ $script.RelPermalink }}"></script>
       {{ else }}
