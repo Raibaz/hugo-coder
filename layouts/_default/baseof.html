@@ -4,10 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="{{ .Site.Language.Lang }}">
-    {{ with .OutputFormats.Get "rss" -}}
-      {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
-    {{ end }}
+    <meta http-equiv="Content-Language" content="{{ .Site.Language.Lang }}">    
+    <link rel="alternate" type="application/rss+xml" href="https://raibaz.it/index.xml" title="Raibaz.">    
     {{ if .Site.Params.csp }}
       {{ partial "csp.html" . }}
     {{ end }}
@@ -132,26 +130,6 @@
     {{ end }}
 
     {{ template "_internal/google_analytics.html" . }}
-
-    {{ if and .Site.Params.fathomAnalytics .Site.Params.fathomAnalytics.siteID }}
-      {{- partial "analytics/fathom" . -}}
-    {{ end }}
-
-    {{ if and .Site.Params.plausibleAnalytics .Site.Params.plausibleAnalytics.domain }}
-      {{- partial "analytics/plausible" . -}}
-    {{ end }}
-
-    {{ if and .Site.Params.goatCounter .Site.Params.goatCounter.code }}
-      {{- partial "analytics/goatcounter" . -}}
-    {{ end }}
-
-    {{ if and .Site.Params.cloudflare .Site.Params.cloudflare.token }}
-      {{- partial "analytics/cloudflare" . -}}
-    {{ end }}
-
-    {{ if and .Site.Params.matomo .Site.Params.matomo.serverURL }}
-      {{- partial "analytics/matomo" . -}}
-    {{ end }}
   </body>
 
 </html>
